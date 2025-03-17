@@ -9,6 +9,5 @@ type NavLinkProps = ComponentProps<typeof Link>
 export function NavLink(props: NavLinkProps) {
   const pathname = usePathname()
   const isCurrent = props.href.toString() === pathname
-  console.log({ isCurrent })
   return <Link data-current={isCurrent} {...props} />
 }
