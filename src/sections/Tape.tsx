@@ -24,7 +24,10 @@ export function Tape() {
                 <span className="text-sm font-extrabold text-gray-900 uppercase">
                   {word}
                 </span>
-                <StarIcon className="size-6 -rotate-12 text-gray-900" />
+                <StarIcon
+                  viewBox="0 0 24 24"
+                  className="size-6 -rotate-12 text-gray-900"
+                />
               </div>
             ))}
           </div>
