@@ -82,16 +82,24 @@ export function Hero() {
         {starOrbits.map(({ size, containerSize, rotation }, index) => (
           <HeroOrbit key={index} size={containerSize} rotation={rotation}>
             <StarIcon
-              className={`size-${size} text-emerald-300`}
+              className={`text-emerald-300`}
               viewBox="0 0 24 24"
+              style={{
+                width: `${size * 4}px`,
+                height: `${size * 4}px`,
+              }}
             />
           </HeroOrbit>
         ))}
         {sparkleOrbits.map(({ size, containerSize, rotation }, index) => (
           <HeroOrbit key={index} size={containerSize} rotation={rotation}>
             <SparkleIcon
-              className={`size-${size} text-emerald-300/20`}
+              className={`text-emerald-300/20`}
               viewBox="0 0 24 24"
+              style={{
+                width: `${size * 4}px`,
+                height: `${size * 4}px`,
+              }}
             />
           </HeroOrbit>
         ))}

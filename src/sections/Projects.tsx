@@ -1,9 +1,10 @@
 import darkSaasLandingPage from '@/assets/dark-saas-landing-page.png'
 import lightSaasLandingPage from '@/assets/light-saas-landing-page.png'
 import aiStartupLandingPage from '@/assets/ai-startup-landing-page.png'
-import grainImage from '@/assets/grain.jpg'
 import Image from 'next/image'
 import { ArrowUpRight, CheckCircleIcon } from 'lucide-react'
+import { SectionHeader } from '@/components/SectionHeader'
+import { Card } from '@/components/Card'
 
 const portfolioProjects = [
   {
@@ -48,29 +49,17 @@ export function Projects() {
   return (
     <section className="pb-16 lg:py-24">
       <div className="container">
-        <div className="flex justify-center">
-          <p className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-center font-semibold tracking-widest text-transparent uppercase">
-            Real-world Results
-          </p>
-        </div>
-        <h2 className="mt-6 text-center font-serif text-3xl md:text-5xl">
-          Featured Projects
-        </h2>
-        <p className="mx-auto mt-4 max-w-md text-center text-white/60 md:text-lg lg:text-xl">
-          See how I transformed concepts into engaging digital experiences.
-        </p>
+        <SectionHeader
+          eyebrow="Real-world Results"
+          title="Featured Projects"
+          description="See how I transformed concepts into engaging digital experiences."
+        />
         <div className="mt-10 flex flex-col gap-20 md:mt-20 md:gap-20">
           {portfolioProjects.map((project) => (
-            <div
+            <Card
               key={project.title}
-              className="relative z-0 overflow-hidden rounded-3xl bg-gray-800 p-8 pb-0 after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:rounded-3xl after:outline-2 after:-outline-offset-2 after:outline-white/20 after:content-[''] md:px-10 md:pt-12 lg:px-20 lg:pt-16"
+              className="p-8 pb-0 md:px-10 md:pt-12 lg:px-20 lg:pt-16"
             >
-              <div
-                className="absolute inset-0 -z-30 opacity-5"
-                style={{
-                  backgroundImage: `url(${grainImage.src})`,
-                }}
-              />
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
                   <div className="inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-sm font-bold tracking-widest text-transparent uppercase">
@@ -108,7 +97,7 @@ export function Projects() {
                   />
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
