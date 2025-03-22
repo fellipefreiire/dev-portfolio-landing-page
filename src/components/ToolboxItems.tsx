@@ -6,6 +6,7 @@ import ChromeIcon from '@/assets/chrome.svg'
 import GithubIcon from '@/assets/github.svg'
 import { TechIcon } from '@/components/TechIcon'
 import { cn } from '@/utils/cn'
+import { Fragment } from 'react'
 
 const toolboxItems = [
   {
@@ -56,14 +57,18 @@ export function ToolboxItems({
           itemsWrapperClassName,
         )}
       >
-        {toolboxItems.map((item) => (
-          <div
-            key={item.title}
-            className="inline-flex items-center gap-4 rounded-lg px-3 py-2 font-semibold outline-2 outline-white/10"
-          >
-            <TechIcon as={item.iconType} />
-            <span>{item.title}</span>
-          </div>
+        {[...new Array(2)].fill(0).map((_, index) => (
+          <Fragment key={index}>
+            {toolboxItems.map((item) => (
+              <div
+                key={item.title}
+                className="inline-flex items-center gap-4 rounded-lg px-3 py-2 font-semibold outline-2 outline-white/10"
+              >
+                <TechIcon as={item.iconType} />
+                <span>{item.title}</span>
+              </div>
+            ))}
+          </Fragment>
         ))}
       </div>
     </div>
