@@ -55,10 +55,13 @@ export function Projects() {
           description="See how I transformed concepts into engaging digital experiences."
         />
         <div className="mt-10 flex flex-col gap-20 md:mt-20 md:gap-20">
-          {portfolioProjects.map((project) => (
+          {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="p-8 pb-0 md:px-10 md:pt-12 lg:px-20 lg:pt-16"
+              className="sticky p-8 pb-0 md:px-10 md:pt-12 lg:px-20 lg:pt-16"
+              style={{
+                top: `calc(64px + ${projectIndex * 40}px)`,
+              }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
